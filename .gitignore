@@ -14,7 +14,7 @@ _book
 *.epub
 *.mobi
 *.pdf
-
+~/Desktop/os_course_exercises/.DS_Store
 # swap
 *~
 backup
