@@ -56,6 +56,11 @@
 
 - 请分析并理解[v9\-computer](https://github.com/chyyuu/os_tutorial_lab/blob/master/v9_computer/docs/v9_computer.md)以及模拟v9\-computer的em.c。理解：在v9\-computer中如何实现时钟中断的；v9 computer的CPU指令，关键变量描述有误或不全的情况；在v9\-computer中的跳转相关操作是如何实现的；在v9\-computer中如何设计相应指令，可有效实现函数调用与返回；OS程序被加载到内存的哪个位置,其堆栈是如何设置的；在v9\-computer中如何完成一次内存地址的读写的；在v9\-computer中如何实现分页机制。
 
+  实现时钟中断：
+
+  描述有误和不全：
+
+
 
 - 请编写一个小程序，在v9-cpu下，能够输出字符
 
@@ -72,6 +77,9 @@
 
 - 请分析并理解[RISC-V CPU](http://www.riscvbook.com/chinese/)以及会使用模拟RISC\-V(简称RV)的qemu工具。理解：RV的特权指令，CSR寄存器和在RV中如何实现时钟中断和IO操作；OS程序如何被加载运行的；在RV中如何实现分页机制。
   - 请编写一个小程序，在RV下，能够输出字符
+
   - 输入的字符并输出你输入的字符
+
   - 请编写一个小程序，在RV下，能够产生各种异常/中断
+
   - 请编写一个小程序，在RV下，能够统计并显示内存大小
