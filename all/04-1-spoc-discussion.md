@@ -173,9 +173,7 @@ time ./goodlocality
 
 （1）缺页异常可用于虚拟内存管理中。如果在中断服务例程中进行缺页异常的处理时，再次出现缺页异常，这时计算机系统（软件或硬件）会如何处理？请给出你的合理设计和解释。
 
-首先三次异常系统直接重启。
-
-
+我觉得不能允许缺页异常中产生缺页异常，因为这种异常会一直嵌套下去，然而三重异常操作系统就会直接重启。
 
 > 提示：https://en.wikipedia.org/wiki/Double_fault 和 https://en.wikipedia.org/wiki/Triple_fault
 
@@ -217,6 +215,13 @@ PT6..0:页表的物理基址>>5
 3) Virtual Address 6890:
 4) Virtual Address 0af6:
 5) Virtual Address 1e6f:
+```
+
+```
+Virtual Address 1c13(1 1100 0001 0011):
+  --> pde index:0x7(00111)  pde contents:(0xbd, 1011 1101, valid 1, pt 0x3d(page 0x3d))
+  	--> pte index:0x0(00000)  pte contents:(0xf6, 1111 0110, valid 1, pfn 0x76)
+  		--> To Physical Address 0xed3(1110 1101 0011) --> Value:0x12 
 ```
 
 请写出一个translation程序（可基于rust、python、ruby、C、C++、LISP、JavaScript等），输入是一个虚拟地址，依据[物理内存模拟数据文件](./04-1-spoc-memdiskdata.md)自动计算出对应的pde index, pde contents, pte index, pte contents，the value of addr in phy page OR disk sector。
